@@ -2,6 +2,13 @@
   text-align: center;
 }
 
+.App .heading{
+  color:#DE3163;
+  font-size: 42px;
+  font-family:cursive;
+  font-weight: 800;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
