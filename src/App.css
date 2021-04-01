@@ -2,8 +2,11 @@
   text-align: center;
 }
 
-.App h2{
-  color:#6495ED;
+.App .heading{
+  color:#DE3163;
+  font-size: 42px;
+  font-family:cursive;
+  font-weight: 800;
 }
 
 .App-logo {

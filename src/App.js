@@ -6,7 +6,7 @@ function App() {
   return (
     <div className="App">
       
-      <div><h2>Todo App</h2></div>
+      <div className="heading">Todo App</div>
 
       <TaskList/>
       <TodoInput/>
