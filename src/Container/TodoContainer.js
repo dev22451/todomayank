@@ -9,6 +9,10 @@ class TodoContainer extends React.Component{
             inputValue: '',
             todoList: [],
         }
+        // Binding the constructor
+        this.handleTodoInput = this.handleTodoInput.bind(this);
+        this.handleInputValue = this.handleInputValue.bind(this);
+        this.handleCheck = this.handleCheck.bind(this);
     }
 
     handleInputValue(e){
@@ -25,10 +29,19 @@ class TodoContainer extends React.Component{
 
         refTodoList.push({
             taskname: inputValue,
+            isChecked: false
         })
         this.setState({
             todoList:refTodoList,
             inputValue:''
+        })
+    }
+
+    handleCheck (index) {
+        let refList = this.state.todoList;
+        refList[index].isChecked = true
+        this.setState({
+            todoList: refList
         })
     }
 
@@ -42,7 +55,7 @@ class TodoContainer extends React.Component{
                     handleInputValue={this.handleInputValue}
                     handleTodoInput={this.handleTodoInput}/>
                 
-                <TaskList todoList={todoList}/>
+                <TaskList todoList={todoList} handleCheck={this.handleCheck}/>
             </div>
         )
     }
