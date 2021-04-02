@@ -18,6 +18,8 @@
   border-radius: 50px 0px 0px 50px;
   outline: none;
   padding-left: 18px;
+  font-weight: 600;
+  font-family:Arial;
 }
 
 .btn{
@@ -31,6 +33,13 @@
   font-family:Arial, Helvetica, sans-serif;
   font-weight: 600;
 }
+
+@media only screen and (max-width: 700px) {
+  .inputfield{
+    width: 276px;
+  }
+}
+
 
 .App-logo {
   height: 40vmin;
