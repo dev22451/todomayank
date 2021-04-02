@@ -38,8 +38,14 @@ class TodoContainer extends React.Component{
     }
 
     handleCheck (index) {
+
         let refList = this.state.todoList;
-        refList[index].isChecked = true
+        
+        if(!refList[index].isChecked)
+            refList[index].isChecked = true
+        else
+            refList[index].isChecked = false
+            
         this.setState({
             todoList: refList
         })
