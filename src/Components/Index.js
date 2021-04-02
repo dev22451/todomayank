@@ -1,4 +1,4 @@
-import TodoInput from './Components/TodoInput.js'
-import TaskList from './Components/TaskList.js'
+import TaskList from './TaskList'
+import TodoInput from './TodoInput' 
 
-export  { TodoList, AddTodoInput } ;
+export  { TaskList, TodoInput } ;

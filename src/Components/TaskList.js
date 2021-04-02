@@ -1,7 +1,7 @@
 import React from 'react'
 
 const TaskList = () => (
-    <div>Task List</div>
+    <div></div>
 );
 
 export default TaskList;

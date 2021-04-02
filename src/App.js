@@ -1,6 +1,6 @@
-import './App.css';
-import TaskList from './Components/TaskList.js'
-import TodoInput from './Components/TodoInput.js'
+import React from 'react'
+import './App.css'
+import TodoContainer from './Container/TodoContainer.js'
 
 function App() {
   return (
@@ -8,9 +8,7 @@ function App() {
       
       <div className="heading">Todo App</div>
 
-      <TaskList/>
-      <TodoInput/>
-
+      <TodoContainer />
     </div>
   );
 }
