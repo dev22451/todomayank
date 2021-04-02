@@ -13,12 +13,22 @@ class TodoContainer extends React.Component{
         this.handleTodoInput = this.handleTodoInput.bind(this);
         this.handleInputValue = this.handleInputValue.bind(this);
         this.handleCheck = this.handleCheck.bind(this);
+        this.handleDelete = this.handleDelete.bind(this);
     }
 
     handleInputValue(e){
         // changing state for inputValue
         this.setState({
             inputValue: e.target.value
+        })
+    }
+
+    handleDelete(index){
+        let refList = this.state.todoList;
+        refList.splice(index,1);
+
+        this.setState({
+            todoList: refList
         })
     }
 
@@ -45,7 +55,7 @@ class TodoContainer extends React.Component{
             refList[index].isChecked = true
         else
             refList[index].isChecked = false
-            
+
         this.setState({
             todoList: refList
         })
@@ -61,7 +71,7 @@ class TodoContainer extends React.Component{
                     handleInputValue={this.handleInputValue}
                     handleTodoInput={this.handleTodoInput}/>
                 
-                <TaskList todoList={todoList} handleCheck={this.handleCheck}/>
+                <TaskList todoList={todoList} handleCheck={this.handleCheck} handleDelete={this.handleDelete}/>
             </div>
         )
     }
