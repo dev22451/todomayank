@@ -1,4 +1,5 @@
 import React from 'react'
+import '../App.css'
 
 const TaskList = (props) => {
     const {todoList, handleCheck} = props;
@@ -9,10 +10,10 @@ const TaskList = (props) => {
                 todoList.map((list, index) => {
                     const{taskname, isChecked} = list
                     return(
-                        <div>
-                            <input type="checkbox" checked={isChecked} onChange={()=>{handleCheck(index)}}/>
+                        <div className='list' key={index}>
+                            <input type="checkbox" className="check" checked={isChecked} onChange={()=>{handleCheck(index)}}/>
                             {taskname}
-                            {isChecked === true && <span style={{color:'red'}}>Completed</span>}
+                            {isChecked === true && <span className="complete" style={{color:'#fff'}}>Completed</span>}
                         </div>
                     )
                 })
