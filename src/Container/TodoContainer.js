@@ -17,8 +17,10 @@ class TodoContainer extends React.Component{
         this.handleInputValue = this.handleInputValue.bind(this);
         this.handleCheck = this.handleCheck.bind(this);
         this.handleDelete = this.handleDelete.bind(this);
+        this.handledit = this.handledit.bind(this);
     }
 
+    // searchbar function
     handleFilterTextChange(e){
         const refList = this.state.todoList;
         const filterText = this.state.filterText;
@@ -44,6 +46,7 @@ class TodoContainer extends React.Component{
         })
     }
 
+    // task delete function
     handleDelete(index){
         let refList = this.state.todoList;
         refList.splice(index,1);
@@ -53,6 +56,7 @@ class TodoContainer extends React.Component{
         })
     }
 
+    // todo input function
     handleTodoInput(){
         // writing the logics for inserting the inputValues in todoList array
         const {todoList, inputValue} = this.state;
@@ -73,7 +77,8 @@ class TodoContainer extends React.Component{
         })
     }
 
-    handleCheck (index) {
+    // checkbox function
+    handleCheck(index) {
 
         let refList = this.state.todoList;
         
@@ -85,6 +90,12 @@ class TodoContainer extends React.Component{
         this.setState({
             todoList: refList
         })
+    }
+
+    // edit function
+    handledit(index){
+        let refList = this.state.todoList;
+        refList[index].taskname =prompt('do you want to change : '+refList[index].taskname);
     }
 
     render(){
@@ -100,7 +111,11 @@ class TodoContainer extends React.Component{
                     handleFilterTextChange={this.handleFilterTextChange}
                     alerttext={alerttext}/>
                 
-                <TaskList todoList={todoList} handleCheck={this.handleCheck} handleDelete={this.handleDelete}/>
+                <TaskList 
+                    todoList={todoList} 
+                    handleCheck={this.handleCheck} 
+                    handleDelete={this.handleDelete}
+                    handledit={this.handledit}/>
             </div>
         )
     }
