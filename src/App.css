@@ -1,5 +1,11 @@
+body{background-color:#282c34;}
+
 .App {
   text-align: center;
+}
+
+.todoicon{
+  font-size: 32px;
 }
 
 .App .heading{
@@ -20,6 +26,26 @@
   padding-left: 18px;
   font-weight: 600;
   font-family:Arial;
+}
+
+.alerttxt{
+  margin-right: 525px;
+  font-size: 14px;
+  color:#DE3163;
+  font-weight: 600;
+}
+
+.searchfield{
+  border: 2px solid #DE3163;
+  color: #DE3163;
+  width: 100px;
+  height: 30px;
+  border-radius: 0px 0px 0px 0px;
+  outline: none;
+  padding-left: 18px;
+  font-weight: 600;
+  font-family:Arial;
+  border-left: none;
 }
 
 .btn{
@@ -43,7 +69,11 @@
   padding-left: 15px;
   padding-right: 20px;
   font-weight: 600;
-  margin: 1% 28% 1% 28%;
+  margin: 0% 23% 1% 23%;
+}
+
+.taskname{
+  width: 80px;
 }
 
 .check{
@@ -52,6 +82,7 @@
 
 .complete{
   float: right;
+  margin: 0px 5px;
 }
 
 @media only screen and (max-width: 700px) {
