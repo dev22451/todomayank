@@ -9,7 +9,9 @@ class TodoContainer extends React.Component{
             inputValue: '',
             todoList: [],
             filterText:'',
-            alerttext:''
+            alerttext:'',
+            inputopen: -1,
+            editname:''
         }
         // Binding the constructor
         this.handleFilterTextChange = this.handleFilterTextChange.bind(this);
@@ -17,7 +19,9 @@ class TodoContainer extends React.Component{
         this.handleInputValue = this.handleInputValue.bind(this);
         this.handleCheck = this.handleCheck.bind(this);
         this.handleDelete = this.handleDelete.bind(this);
-        this.handledit = this.handledit.bind(this);
+        this.handlEdit = this.handlEdit.bind(this);
+        this.handleChangeTask = this.handleChangeTask.bind(this);
+        this.handleSave = this.handleSave.bind(this);
     }
 
     // searchbar function
@@ -36,7 +40,7 @@ class TodoContainer extends React.Component{
             }
             rows.push(refLis.taskname)
         });
-        console.log(refList.concat([rows]))
+        console.log(rows);
     }
     
     handleInputValue(e){
@@ -93,13 +97,30 @@ class TodoContainer extends React.Component{
     }
 
     // edit function
-    handledit(index){
+    handlEdit(index){
+        this.setState({
+            inputopen:index,
+        })
+    }
+
+    handleChangeTask(e){
+        this.setState({
+            editname:e.target.value
+        })    
+    }
+
+    handleSave(index){
         let refList = this.state.todoList;
-        refList[index].taskname =prompt('do you want to change : '+refList[index].taskname);
+        if(this.state.editname.length>=5){
+            refList[index].taskname = this.state.editname;
+        }
+        this.setState({
+            inputopen:!this.state.inputopen,
+        })
     }
 
     render(){
-        const {inputValue, todoList, filterText, alerttext} = this.state;
+        const {inputValue, todoList, filterText, alerttext, inputopen, editname} = this.state;
         
         return(
             <div>
@@ -113,9 +134,13 @@ class TodoContainer extends React.Component{
                 
                 <TaskList 
                     todoList={todoList} 
+                    inputopen={inputopen}
+                    editname={editname}
+                    handleChangeTask={this.handleChangeTask}
                     handleCheck={this.handleCheck} 
                     handleDelete={this.handleDelete}
-                    handledit={this.handledit}/>
+                    handlEdit={this.handlEdit}
+                    handleSave={this.handleSave}/>
             </div>
         )
     }
