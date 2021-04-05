@@ -1,4 +1,4 @@
-import TaskList from './TaskList'
-import TodoInput from './TodoInput' 
+import TaskList from "./TaskList";
+import TodoInput from "./TodoInput";
 
-export  { TaskList, TodoInput } ;
+export { TaskList, TodoInput };
